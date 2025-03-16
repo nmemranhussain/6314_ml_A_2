@@ -91,7 +91,7 @@ The dataset was divided into training and validation data as follows:
 | Coefficients of 'icon_rain'                | 0.543769     |
 | Coefficients of 'icon_snow'                | -0.247574    |
 
-In first Sample, the probability that **PU_ct > DO_ct** in the **first test sample:** 0.4691
+In first Sample, the probability that **PU_ct > DO_ct** is: 0.4691**
 
 ### SVM Linear (C = 10) Classifier Model:
 | Evaluation Matrix                          |  Values     |
