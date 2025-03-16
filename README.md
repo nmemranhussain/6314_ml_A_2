@@ -50,14 +50,6 @@ The dataset was divided into training and validation data as follows:
   
 - **Test Accuracy:** This measures the performance of the models on a separate set of data that was not used during the training phase. It's used to assess how well the model generalizes to new, unseen data. In this project, test accuracy is crucial for determining which model predicts bikeshare traffic conditions most effectively outside of the training context. High test accuracy implies that the model can reliably predict outcomes in real-world scenarios, which is vital for operational decision-making in urban planning or transportation management.
 
-
-
-| Evaluation Matrix                          |       Model                              |   Values    |
-|--------------------------------------------|------------------------------------------|-------------|
-| Train Accuracy                             | KNN classifier model with K=5            | 0.7593      |
-| Test Accuracy                              | KNN classifier model with K=5            | 0.4444      |
-| Training Accuracy                          | KNN classifier model with K= 1 to 15     
-
 ### Software Used to Implement the Model
 - **Software:** Python (with libraries such as Pandas, Scikit-learn, seaborn & matplotlib)
 
@@ -66,3 +58,65 @@ The dataset was divided into training and validation data as follows:
 - **'scikit-learn'**: '1.4.2',
 - **'seaborn'**: '0.13.2',
 - **'matplotlib'**: '3.8.4**
+
+## Quantitative Analysis
+
+### K-Nearest Neighbors (KNN) classifier Model:
+
+![Plot of Train & Test Accuracy Vs. Number of Neighbors in KNN](ml_6314_A_2jpg) 
+
+**Description**: The plot displays the training and testing accuracy of a K-Nearest Neighbors (KNN) classifier across different values of K, the number of neighbors. The training accuracy starts off high at lower values of K, indicating overfitting, and declines as K increases, suggesting a reduction in model complexity. Conversely, the testing accuracy initially rises as K increases from 2 to 8, highlighting improved model generalization, before stabilizing and showing minor fluctuations beyond K=8, which indicates that further increases in K do not significantly enhance model performance. The peak in testing accuracy around K=8 suggests this as the optimal number of neighbors for balancing model accuracy and generalization, demonstrating a typical trade-off between bias and variance in machine learning model tuning.
+
+| Evaluation Matrix                          |       Model                              |   Values    |
+|--------------------------------------------|------------------------------------------|-------------|
+| Train Accuracy                             | KNN classifier model with K=5            | 0.7593      |
+| Test Accuracy                              | KNN classifier model with K=5            | 0.4444      |
+| Optimal Number of K                        | Using NumPy's **np.argmax()**            | 9           |
+| Test Accuracy                              | Using NumPy's **np.argmax()**            | 0.5556      |
+| Best hyperparameters (Optimal Number of K) | Using GridSearchCV                       | 8           |
+| Test accuracy                              | Using GridSearchCV                       | 0.472222222 |
+
+### Logisitic Regression Classifier Model:
+
+| Evaluation Matrix                          |   Values     |
+|--------------------------------------------|--------------|
+| Train Accuracy                             |  0.7222      |
+| Test Accuracy                              |  0.5278      |
+| Intercept:                                 | -0.22399632  |
+| Coefficients of 'temp'                     | -0.081528    |
+| Coefficients of 'percip'                   | 1.351205     |
+| Coefficients of 'windspeed'                | -0.040697    |
+| Coefficients of 'uvindex'                  | 0.252599     |
+| Coefficients of 'icon_partly-cloudy-day'   | 0.779979     |
+| Coefficients of 'icon_rain'                | 0.543769     |
+| Coefficients of 'icon_snow'                | -0.247574    |
+
+In first Sample, the probability that **PU_ct > DO_ct** in the **first test sample:** 0.4691
+
+### SVM (linear, C = 10) Classifier Model:
+| Evaluation Matrix                          |  Values     |
+|--------------------------------------------|-------------|
+| Linear SVC Training Accuracy               |  0.6852     |
+| Linear SVC Testing Accuracy                |  0.5000     |
+
+### SVM (Non-linear, using rbf kernel, C = 10) Classifier Model:
+
+| Evaluation Matrix                          |  Values     |
+|--------------------------------------------|-------------|
+| Nonlinear SVC Training Accuracy            | 0.8148      |
+| Nonlinear SVC Testing Accuracy             | 0.5000      |
+
+## Among the KNN, Logisitc Regression, linear SVC, nonlinear SVC with RBF Kernel, Logistic Regression is the best.  
+When evaluating the performance of the different models, the best-performing model can be determined based on both the training and testing accuracies. It's important to look for a model that not only performs well on the training data but also generalizes effectively to new, unseen data (testing data). Here's the summarized result:
+
+- K-Nearest Neighbors (KNN): Optimal K is 8 with a **Testing Accuracy of 0.4722**
+- Logistic Regression: Training Accuracy of 0.6667 and **Testing Accuracy of 0.5278**
+- Linear SVC: Training Accuracy of 0.6667 and **Testing Accuracy of 0.5000**
+- Nonlinear SVC: Training Accuracy of 0.5741 and **Testing Accuracy of 0.5000**
+  
+Among the models listed—K-Nearest Neighbors (KNN), Logistic Regression, Linear SVC (Support Vector Classifier), and Nonlinear SVC with RBF (Radial Basis Function) kernel—the Logistic Regression performs the best based on the testing accuracy. The Logistic Regression model has a testing accuracy of 0.5278, which is the highest among the four models . Testing accuracy is a critical measure as it indicates how well the model can generalize to new, unseen data. In this case, while the Logistic Regression model does not achieve a very high accuracy, it still outperforms the other models, which have lower testing accuracies (K-Nearest Neighbors (KNN) at 0.4722, Linear SVC at 0.5000, and Nonlinear SVC at 0.5000). This suggests that the Logistic Regression model is more effective in capturing the underlying patterns in the data without overfitting compared to the other models.
+
+
+
+
+
