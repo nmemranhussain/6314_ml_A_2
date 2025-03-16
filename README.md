@@ -63,7 +63,7 @@ The dataset was divided into training and validation data as follows:
 
 ### K-Nearest Neighbors (KNN) classifier Model:
 
-![Plot of Train & Test Accuracy Vs. Number of Neighbors in KNN](ml_6314_A_2) 
+![Plot of Train & Test Accuracy Vs. Number of Neighbors in KNN](ml_6314_A_2.jpg) 
 
 **Description**: The plot displays the training and testing accuracy of a K-Nearest Neighbors (KNN) classifier across different values of K, the number of neighbors. The training accuracy starts off high at lower values of K, indicating overfitting, and declines as K increases, suggesting a reduction in model complexity. Conversely, the testing accuracy initially rises as K increases from 2 to 8, highlighting improved model generalization, before stabilizing and showing minor fluctuations beyond K=8, which indicates that further increases in K do not significantly enhance model performance. The peak in testing accuracy around K=8 suggests this as the optimal number of neighbors for balancing model accuracy and generalization, demonstrating a typical trade-off between bias and variance in machine learning model tuning.
 
