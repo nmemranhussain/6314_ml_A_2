@@ -93,13 +93,13 @@ The dataset was divided into training and validation data as follows:
 
 In first Sample, the probability that **PU_ct > DO_ct** in the **first test sample:** 0.4691
 
-### SVM (linear, C = 10) Classifier Model:
+### SVM Linear (C = 10) Classifier Model:
 | Evaluation Matrix                          |  Values     |
 |--------------------------------------------|-------------|
 | Linear SVC Training Accuracy               |  0.6852     |
 | Linear SVC Testing Accuracy                |  0.5000     |
 
-### SVM (Non-linear, using rbf kernel, C = 10) Classifier Model:
+### SVM Non-linear (using rbf kernel where C = 10) Classifier Model:
 
 | Evaluation Matrix                          |  Values     |
 |--------------------------------------------|-------------|
